@@ -27,7 +27,7 @@ public class Info {
 
     regionInfoDtoList.clear();
     for (int i=0; i<tableDescriptor.length;i++ ){
-      Table table = connection.getTable(TableName.valueOf("emp"));
+      Table table = connection.getTable(tableDescriptor[i].getTableName());
       regionInfoDtoList.addAll(getRegionInfos(table,connection));
       table.close();
     }
